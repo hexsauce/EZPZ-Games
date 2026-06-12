@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="images/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EZPZ Games — Coming Soon</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0D0D0D;
+      --text: #F0EDE8;
+      --muted: #777;
+      --orange: #E86B00;
+      --orange-light: #FF7A00;
+      --border: #1e1e1e;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Pixel grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    /* Orange glow */
+    body::after {
+      content: '';
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(232, 107, 0, 0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 540px;
+    }
+
+    /* Logo mark recreation in CSS */
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--orange);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      letter-spacing: -0.03em;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    /* Animated pixel dots */
+    .pixel-bar {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 3rem;
+    }
+
+    .pixel-bar span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      opacity: 0.15;
+      animation: blink 1.6s infinite;
+    }
+
+    .pixel-bar span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .pixel-bar span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .pixel-bar span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .pixel-bar span:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .pixel-bar span:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+
+    .pixel-bar span:nth-child(6) {
+      animation-delay: 1.0s;
+    }
+
+    .pixel-bar span:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 0.15;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 9vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      border-radius: 4px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover {
+      opacity: 0.75;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      border: 1px solid #2a2a2a;
+      color: var(--muted);
+    }
+
+    .footer-text {
+      font-size: 0.75rem;
+      color: #333;
+      letter-spacing: 0.05em;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pixel-bar span {
+        animation: none;
+        opacity: 0.4;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="logo-wrap">
+      <img src="images/logo.png" alt="EZPZ Games" height="100" />
+    </div>
+
+    <div class="pixel-bar">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <h1>Something's<br><em>loading.</em></h1>
+
+    <p class="sub">
+      Games in the works.<br>
+      Built by Bryan Lee — developer, engineer, maker of things.
+    </p>
+
+    <div class="links">
+      <a href="https://www.bryanlee.space" class="btn btn-primary" target="_blank" rel="noopener">About me</a>
+      <a href="mailto:bryan@ezpzgamestudio.com" class="btn btn-ghost">Get in touch</a>
+    </div>
+
+    <p class="footer-text">© 2026 EZPZ Games</p>
+
+  </div>
+</body>
+
+</html>
