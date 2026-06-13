@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel="icon" href="images/favicon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EZPZ Games — Coming Soon</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #0D0D0D;
@@ -61,7 +51,7 @@
       position: fixed;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(232, 107, 0, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,107,0,0.08) 0%, transparent 70%);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -125,44 +115,17 @@
       animation: blink 1.6s infinite;
     }
 
-    .pixel-bar span:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .pixel-bar span:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .pixel-bar span:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    .pixel-bar span:nth-child(4) {
-      animation-delay: 0.6s;
-    }
-
-    .pixel-bar span:nth-child(5) {
-      animation-delay: 0.8s;
-    }
-
-    .pixel-bar span:nth-child(6) {
-      animation-delay: 1.0s;
-    }
-
-    .pixel-bar span:nth-child(7) {
-      animation-delay: 1.2s;
-    }
+    .pixel-bar span:nth-child(1) { animation-delay: 0s; }
+    .pixel-bar span:nth-child(2) { animation-delay: 0.2s; }
+    .pixel-bar span:nth-child(3) { animation-delay: 0.4s; }
+    .pixel-bar span:nth-child(4) { animation-delay: 0.6s; }
+    .pixel-bar span:nth-child(5) { animation-delay: 0.8s; }
+    .pixel-bar span:nth-child(6) { animation-delay: 1.0s; }
+    .pixel-bar span:nth-child(7) { animation-delay: 1.2s; }
 
     @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 0.15;
-      }
-
-      50% {
-        opacity: 1;
-      }
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 1; }
     }
 
     h1 {
@@ -204,10 +167,7 @@
       text-decoration: none;
       transition: opacity 0.15s;
     }
-
-    .btn:hover {
-      opacity: 0.75;
-    }
+    .btn:hover { opacity: 0.75; }
 
     .btn-primary {
       background: var(--orange);
@@ -226,19 +186,16 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .pixel-bar span {
-        animation: none;
-        opacity: 0.4;
-      }
+      .pixel-bar span { animation: none; opacity: 0.4; }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
 
     <div class="logo-wrap">
-      <img src="images/logo.png" alt="EZPZ Games" height="100" />
+      <div class="logo-icon">EZ</div>
+      <span class="logo-text">EZPZ Games</span>
     </div>
 
     <div class="pixel-bar">
@@ -249,18 +206,15 @@
     <h1>Something's<br><em>loading.</em></h1>
 
     <p class="sub">
-      Games in the works.<br>
-      Built by Bryan Lee — developer, engineer, maker of things.
+      Games in development. More to come soon.
     </p>
 
     <div class="links">
-      <a href="https://www.bryanlee.space" class="btn btn-primary" target="_blank" rel="noopener">About me</a>
-      <a href="mailto:bryan@ezpzgamestudio.com" class="btn btn-ghost">Get in touch</a>
+      <a href="mailto:bryan@ezpzgamestudio.com" class="btn btn-primary">Get in touch</a>
     </div>
 
     <p class="footer-text">© 2026 EZPZ Games</p>
 
   </div>
 </body>
-
 </html>
